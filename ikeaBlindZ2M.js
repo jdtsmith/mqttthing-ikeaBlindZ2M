@@ -57,9 +57,12 @@ function removeOldTargets(obj,seconds) {
 
 function init( params ) {
   let { log, config, publish, notify } = params;
-  let targetPosition=null, curPosition=null, moveDirection=null, newTarget=false
-  let recentTargets={}, moveStart=null, maxRate=config.maxRate || 4, batteryLevel=null
-  let targetConsolidate=config.targetConsolidate || 500
+  let targetPosition=null, curPosition=null,
+      moveDirection=null, newTarget=false,
+      recentTargets={}, moveStart=null,
+      maxRate="maxRate" in config?config.maxRate:4,
+      batteryLevel=null,
+      targetConsolidate=config.targetConsolidate || 500
   log(`Starting Ikea Blind Zigbee2MQTT Codec for ${config.name} with topic base ${config.topicBase}`)
 
   config.type = "windowCovering"
@@ -84,7 +87,7 @@ function init( params ) {
 	   Math.sign(delta) != moveDirection) {
 	  //log("Squashing incorrect targeted move direction report: ",msg.position)
 	  return undefined
-	} else if(rate>maxRate) {
+	} else if(maxRate>0 && rate>maxRate) {
 	  //log("Squashing spurious rate report: ",msg.position)
 	  return undefined
 	}
