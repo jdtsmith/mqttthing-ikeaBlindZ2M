@@ -9,7 +9,7 @@ This simple codec supports operating IKEA blinds (like Fytur) using Zigbee2MQTT 
 
 ## Installation:
 
-Installing is simply a matter of dropping the file `ikeaBlindZ2M.js` into your `homebridge` directory (wherever the `config.json` file is).  
+Installing is simply a matter of [downloading](https://github.com/jdtsmith/mqttthing-ikeaBlindZ2M/archive/main.zip), then dropping the file `ikeaBlindZ2M.js` into your `homebridge` directory (wherever the `config.json` file is).  
 
 ## Configuration:
 
