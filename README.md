@@ -21,7 +21,7 @@ Blinds can be configured in `config.json` as accessories:
   "name": "Blind Name",
   "codec": "ikeaBlindZ2M.js",
   "topicBase": "zigbee2mqtt/ikea_blind_topic",
-  "maxRate": number >0 [OPTIONAL],
+  "maxRate": number > 0 [OPTIONAL],
   "targetConsolidate": number > 0 [OPTIONAL]
 }
 ```
