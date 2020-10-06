@@ -15,14 +15,14 @@ Installing is simply a matter of [downloading](https://github.com/jdtsmith/mqttt
 
 Blinds can be configured in `config.json` as accessories:
 
-```json
+```
 {
   "accessory": "mqttthing",
   "name": "Blind Name",
   "codec": "ikeaBlindZ2M.js",
   "topicBase": "zigbee2mqtt/ikea_blind_topic",
-  "maxRate": # >0 [OPTIONAL],
-  "targetConsolidate": #> 0 [OPTIONAL]
+  "maxRate": number >0 [OPTIONAL],
+  "targetConsolidate": number > 0 [OPTIONAL]
 }
 ```
 
