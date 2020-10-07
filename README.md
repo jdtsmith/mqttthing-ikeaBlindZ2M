@@ -3,7 +3,7 @@ A Codec for [homebridge-mqttthing](https://github.com/arachnetech/homebridge-mqt
 
 This simple codec supports operating IKEA blinds (like Fytur) using Zigbee2MQTT to translate commands to and from the blinds into MQTT messages, which mqttthing receives, and this codec encodes and decodes.  Specifically, this codec handles:
 
-- Rate limiting new position targets, as when sliding the blinds up and down in Home or Watch interface
+- Rate limiting new position targets, as when sliding the blinds up and down in Home or watch interface.
 - Working around Zigbee2MQTT's default behavior of "optimistically" and immediately publishing the target position as the current position. New versions of Zigbee2MQTT will include the option to set `optimistic: false` for a device to disable this, and this is strongly recommended (see [this discussion](https://github.com/Koenkk/zigbee2mqtt/issues/4524)). 
 - Keeping the Homekit interface in sync for moves made outside of Homekit (e.g. with remote or buttons on blinds). 
 
@@ -31,7 +31,8 @@ A couple of optional parameters can also be included:
 ```
 maxRate: The maximum rate (in %/sec) that a blind can move [default:
   4 %/sec].  Used to detect spurious location udpates from
-  Zigbee2MQTT (see below).
+  Zigbee2MQTT.  Can be set to 0 to disable.  Not needed if optimistic: 
+  false is configured for the device. 
 
 targetConsolidate: Limit rapid-fire target setting by insisting no
   additional target is specified for this amount of time (in ms)
